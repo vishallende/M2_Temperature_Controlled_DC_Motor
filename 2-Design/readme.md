@@ -33,3 +33,15 @@ In order to get the temperature from the sensed analog voltage, we need to perfo
 Once the calculations are done by the microcontroller according to the logic, the temperature is displayed on the LCD. Like this, the microcontroller will continuously monitor the temperature.
 
 If the temperature exceeds more than 50 deg Celsius (as per the code), the microcontroller will turn on the relay to start the fan. If the temperature drops below 40 deg Celsius (as per the code).
+
+
+
+
+
+
+
+![Circuit-Diagram-of-Temperature-Controlled-DC-Motor](https://user-images.githubusercontent.com/102586974/164995725-d678f103-0b28-428b-bdb4-d76ee2e00849.jpg)
+
+
+Reference image
+
