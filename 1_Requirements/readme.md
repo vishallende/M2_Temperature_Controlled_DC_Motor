@@ -1,66 +1,34 @@
 **Components**
 
 
-Microcontroller Section
+Atmega8
 
-AT89C51 Microcontroller
+L293D
 
+Lm35
 
-AT89C51 Programmer Board
-
-11.0592 MHz Quartz Crystal
-
-33pF Ceramic Capacitor
-
-2 x 10KΩ Resistor
-
-10µF Electrolytic Capacitor
-
-Push Button
-
-16 X 2 LCD Display
-
-10KΩ POT
-
-
-Temperature Sensor Section
-
-LM35,
-ADC0804,
-10KΩ Resistor,
-150pF Ceramic Capacitor,
-1KΩ x 8 Resistor Pack
+DC motor
 
 
 
 
-
-Load Section
-
-2N2222 NPN Transistor,
-1N4007 Diode,
-12V Relay,
-1KΩ Resistor,
-Fan
+**Component Description**
 
 
+**LM35**
 
+The LM35 is an integrated circuit sensor that can be used to measure temperature. The output voltage of this sensor is proportional to the temperature in degree Centigrade. The output voltage of the LM35 will vary at a rate of 10mV per degree Celsius.
 
+Usually, the range of the LM35 temperature sensor is from -55 deg C to +150 deg C. To measure this full range of temperatures i.e. from negative range to positive range, we need to connect an external resistor between the data pin and a negative supply of Vcc.
 
+Any way, we are not going to consider the negative temperature range in this project. So, under normal operating conditions, we can measure the temperature in the range from +2 deg C to +150 deg C.
 
-**Configuring ADC0804 for this Project**
+**ADC**
 
+All the parameters of nature are of analog i.e. most of the data in the real world is characterised by analog signals. For instance, if the temperature of the room is measured.
 
-The configuration of the ADC0804 is explained here. First, we need to connect the 5V regulated power supply to the Vcc pin (Pin 20). Then, connect the analog and digital ground pins (Pins 8 and 10) to the GND.
+The room temperature varies with time continuously. This measured signal, which continuously changes with time say from 1sec , 1.1sec , 1.2 sec and so on is called Analog signal.
 
-In order to use the internal clock, we need to connect a 10KΩ resistor between CLK IN (Pin 4 and CLK R (Pin 19) and then, connect a 150pF cap between pins 4 and GND to complete the oscillator circuit.
+In order to manipulate the real world data using a microprocessor or a microcontroller, we need to convert the analog signals to the digital signals, so that the processor or controller will be able to read, understand and manipulate the data.
 
-The CS pin (Pin 1) is connected to GND to enable the ADC.
-
-In order to read the data from the ADC continuously by the microcontroller, we need to connect the RD pin (Pin 2) to the GND.
-
-For the ADC to continuously read the analog data from the sensor, we need to short the Write pin (Pin 3) with the Interrupt pin (Pin 5).
-
-The analog output of the sensor (LM35) is connected to the Vin+ (Pin 6) of the ADC. The negative analog input pin i.e. Vin- of the ADC is connected to the GND.
-
-The converted digital data which is an 8-bit data will be available at DB0 to DB7 (Pins 18 to 11).
+Atmega8 has internal Analog to digital converter.
